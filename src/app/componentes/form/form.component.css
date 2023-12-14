@@ -8,8 +8,7 @@
 .formulario{
     border: none;
     border-radius: 15px;
-    background-color: #383535;
-    opacity: calc(68%);
+    background-color: #383535AD;
 
 }
 
@@ -24,7 +23,13 @@
     color: white;
     font-weight: bold;
     background: linear-gradient(45deg, rgb(190, 7, 187), rgb(209, 121, 223));
+    border: none;
 }
+
+.btn:hover{
+    background:rgb(209, 121, 223); 
+}
+
 
 .btn-dois{
     color: white;
@@ -37,7 +42,7 @@
 
 
 .btn-dois:hover{
-    background-color: red; 
+    background:rgb(209, 121, 223); 
 }
 
 
@@ -58,12 +63,16 @@ label{
     font-weight: bold;
 }
 
+label:hover{
+    color: purple;
+}
+
 .container-conf{
     border: none;
     border-radius: 15px;
     width: 40%;
-    background-color: #383535;
-    opacity: calc(68%);
+    background-color: #383535AD;
+    
 
 }
 
