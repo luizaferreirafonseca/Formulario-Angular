@@ -1,0 +1,43 @@
+
+
+
+
+.formulario{
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(81, 80, 80);
+}
+
+.btn{
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(45deg, rgb(190, 7, 187), rgb(209, 121, 223));
+}
+
+.btn-dois{
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(45deg, rgb(190, 7, 187), rgb(209, 121, 223));
+    border-radius: 8px;
+    border: none;
+    margin-left: 30px;
+}
+
+
+.form-control{
+    background-color: rgb(116, 115, 115);
+    border: none;
+    color: white;
+}
+
+
+.container-conf{
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(81, 80, 80);
+
+}
+
+p{
+    font-weight: bold;
+}
