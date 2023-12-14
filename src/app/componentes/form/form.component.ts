@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { FormService } from '../../services/form.service';
 import { Endereco } from '../../modelos/Endereco';
 
@@ -31,14 +31,15 @@ export class FormComponent {
 
 
 formulario = new FormGroup({
-nome: new FormControl,
-data: new FormControl,
+nome: new FormControl('', [Validators.required]),
+data: new FormControl('', [Validators.required]),
 cep: new FormControl,
-contato: new FormControl,
-email: new FormControl,
+contato: new FormControl('', [Validators.required]),
+email: new FormControl('', [Validators.required, Validators.email])
 
 
 })
+
 
 
 mostrarTabela = false; 

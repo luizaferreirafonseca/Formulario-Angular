@@ -1,51 +1,56 @@
 
 
-
-<div class="body">
+<main>
     <div class="container-formulario d-flex mt-5 m-4">
         <form [formGroup]="formulario" class="formulario d-flex flex-column justify-content-center w-50 p-3">
 
             <label for="inputName" class="form-label p-1 text-white">Nome completo</label>
             <input formControlName="nome" type="text" id="inputName" class="form-control"
                 aria-describedby="passwordHelpBlock">
+                <p *ngIf="formulario.get('nome')?.touched && formulario.get('nome')?.hasError('required')" class="mensagem-erro">O nome precisa ser informado.</p>
 
             <label for="inputDate" class="form-label p-1 text-white">Data de nascimento</label>
-            <input formControlName="data" type="date" id="inputDate" class="form-control"
+            <input formControlName="data" type="text" id="inputDate" class="form-control"
                 aria-describedby="passwordHelpBlock">
+                <p *ngIf="formulario.get('data')?.touched && formulario.get('data')?.hasError('required')" class="mensagem-erro">O data precisa ser informado.</p>
 
             <label for="inputCep" class="form-label p-1 text-white">CEP</label>
             <input formControlName="cep" type="text" id="inputCep" class="form-control"
                 aria-describedby="passwordHelpBlock">
 
             <label for="inputCel" class="form-label p-1 text-white">Contato</label>
-            <input type="number" formControlName="contato" id="inputCel" class="form-control"
+            <input type="text" formControlName="contato" id="inputCel" class="form-control"
                 aria-describedby="passwordHelpBlock">
+                <p *ngIf="formulario.get('contato')?.touched && formulario.get('contato')?.hasError('required')" class="mensagem-erro">O contato precisa ser informado.</p>
 
             <label for="inputEmail" class="form-label p-1 text-white">Email</label>
             <input type="text" formControlName="email" class="form-control" aria-describedby="passwordHelpBlock">
+            <p *ngIf="formulario.get('email')?.touched && formulario.get('email')?.hasError('required')" class="mensagem-erro">O email precisa ser informado.</p>
+            <p *ngIf="formulario.get('email')?.touched && formulario.get('email')?.hasError('email')" class="mensagem-erro">Informe um e-mail válido.</p>
+            
 
             <label for="inputPassword5" class="form-label p-1 text-white">Nova senha</label>
             <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
             <div id="passwordHelpBlock" class="form-text text-white">
                 Sua senha deve ter no mínimo 5 caracteres.
             </div>
-            <button type="submit" class="btn p-1 mt-2 w-100" (click)="exibirNaTabela()">Enviar</button>
+            <button type="submit" class="btn p-1 mt-2 w-100" (click)="exibirNaTabela()" [disabled]="formulario.invalid">Enviar</button>
 
         </form>
 
-        <div class="container-conf w-25 m-4" *ngIf="mostrarTabela">
+        <div class="container-conf m-4" *ngIf="mostrarTabela">
             <div class="confirmacao">
-                <p class="text-center text-white p-2 fs-4">Confirme seus dados</p>
+                <p class="text-center p-2 fs-4">Confirme seus dados</p>
 
                 <div class="dados p-3 text-white">
-                    <p>Nome completo: {{formulario.value.nome}} </p>
-                    <p>Data de nascimento: {{formulario.value.data}}</p>
-                    <p>CEP: {{endereco.bairro}}</p>
+                    <p><i><b>Nome completo:</b></i> {{formulario.value.nome}}</p>
+                    <p><i><b>Data de nascimento:</b></i> {{formulario.value.data}}</p>
+                    <p><i><b>CEP:</b></i> {{endereco.bairro}}</p>
                     <p>{{endereco.logradouro}}</p>
                     <p>{{endereco.uf}}</p>
                     <p>{{endereco.localidade}}</p>
-                    <p>Contato:{{formulario.value.contato}}</p>
-                    <p>Email: {{formulario.value.email}}</p>
+                    <p><i><b>Contato:</b></i> {{formulario.value.contato}}</p>
+                    <p><i><b>Email:</b></i> {{formulario.value.email}}</p>
 
                     <button type="submit" class="btn-dois p-1 w-75">Confirmar</button>
                 </div>
@@ -58,4 +63,4 @@
 
     </div>
 
-</div>
+</main>

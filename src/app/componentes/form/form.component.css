@@ -1,11 +1,23 @@
 
 
-
+.text-center{
+    color: rgb(244, 169, 244);
+    font-weight: bold;
+}
 
 .formulario{
     border: none;
     border-radius: 15px;
-    background-color: rgb(81, 80, 80);
+    background-color: #383535;
+    opacity: calc(68%);
+
+}
+
+.mensagem-erro{
+    color: rgb(255, 253, 253);
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12px;
 }
 
 .btn{
@@ -24,20 +36,34 @@
 }
 
 
+.btn-dois:hover{
+    background-color: red; 
+}
+
+
+
+
+.form-text{
+    font-size: 10px;
+}
+
 .form-control{
     background-color: rgb(116, 115, 115);
     border: none;
     color: white;
+    opacity: calc(90%);
 }
 
+label{
+    font-weight: bold;
+}
 
 .container-conf{
     border: none;
     border-radius: 15px;
-    background-color: rgb(81, 80, 80);
+    width: 40%;
+    background-color: #383535;
+    opacity: calc(68%);
 
 }
 
-p{
-    font-weight: bold;
-}
